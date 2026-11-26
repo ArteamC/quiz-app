@@ -1,42 +1,63 @@
-# quiz-app
+# Quiz App
 
-This template should help get you started developing with Vue 3 in Vite.
+A quiz application built with Vue 3 and Vite. Questions are displayed one at a time, the score is counted as you answer, and the result is shown at the end.
 
-## Recommended IDE Setup
+## Features
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- One question displayed at a time
+- Immediate feedback: the correct answer turns green, a wrong answer turns red
+- Score counter updated during the quiz
+- Result screen with the final score and a message
+- Restart button to play again
 
-## Recommended Browser Setup
+## Installation
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+1. Install [Node.js](https://nodejs.org/) (version 18 or higher)
+2. Clone the repository:
 
-## Type Support for `.vue` Imports in TS
+```
+git clone https://github.com/ArteamC/quiz-app.git
+cd quiz-app
+```
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+3. Install the dependencies:
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+```
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+4. Start the development server:
 
-```sh
+```
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+5. Open the address shown in the terminal (usually `http://localhost:5173/`).
 
-```sh
-npm run build
+## Usage
+
+1. Read the question and click on one of the options.
+2. The correct answer is highlighted. Click **Next question** to continue.
+3. After the last question, click **See results** to see your score.
+4. Click **Restart quiz** to start again.
+
+## Project structure
+
 ```
+src/
+├── App.vue                  # Main component: quiz state (current question, score)
+├── components/
+│   ├── QuestionCard.vue     # Displays one question and its options
+│   └── ResultScreen.vue     # Displays the final score
+└── data/
+    └── questions.js         # The list of questions
+```
+
+## Customizing the quiz
+
+To change the questions, edit `src/data/questions.js`. Each question has a `text`, a list of `options` and the `correctIndex` of the right answer (starting at 0).
+
+## Built with
+
+- [Vue 3](https://vuejs.org/)
+- [Vite](https://vitejs.dev/)
